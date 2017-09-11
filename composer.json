@@ -1,11 +1,11 @@
 {
-    "name": "amintado/yii2-slider",
+    "name": "amintado/yii2-module-slider",
     "description": "A slider system (widget and module) for Yii2 websites",
-    "keywords": ["yii2", "yii2-ticket", "ticket system", "ricco","amintado"],
+    "keywords": ["yii2", "yii2-slider", "slider module","amintado"],
     "type": "yii2-extension",
-    "license": "MIT",
-    "version": "1.0.8",
-    "homepage": "https://github.com/amintado/yii2-slider",
+    "license": "GPL",
+    "version": "0.1",
+    "homepage": "https://github.com/amintado/yii2-module-slider",
     "authors": [
         {
             "name": "amintado",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "amintado\\ticket\\": ""
+            "amintado\\slider\\": ""
         }
     }
 }
