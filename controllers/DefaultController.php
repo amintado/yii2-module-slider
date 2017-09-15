@@ -1,6 +1,6 @@
 <?php
 
-namespace amintado\controllers;
+namespace amintado\slider\controllers;
 
 use yii\web\Controller;
 
