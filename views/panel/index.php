@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $searchModel amintado\slider\models\\SlideComposerSearch */
+
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 use yii\helpers\Html;
@@ -10,25 +11,27 @@ use kartik\grid\GridView;
 
 $this->title = Yii::t('atslider', 'Slide Composers');
 $this->params['breadcrumbs'][] = $this->title;
-$search = "$('.search-button').click(function(){
-	$('.search-form').toggle(1000);
+$search = "$('.create-slide').click(function(){
+	$('.select-slide').toggle(1000);
 	return false;
 });";
 $this->registerJs($search);
 ?>
 <div class="slide-composer-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <p>
-        <?= Html::a(Yii::t('atslider', 'Create Slide Composer'), ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a(Yii::t('atslider', 'Advance Search'), '#', ['class' => 'btn btn-info search-button']) ?>
-    </p>
+
     <div class="search-form" style="display:none">
-        <?=  $this->render('_search', ['model' => $searchModel]); ?>
+        <?= $this->render('_search', ['model' => $searchModel]); ?>
     </div>
-    <?php 
+    <button class="btn btn-success create-slide" type="submit">
+        <?= Yii::t('atslider', 'Create Slide Composer') ?>
+    </button>
+    <div class="form-group">
+        <?= $this->render('index/_select_model') ?>
+    </div>
+    <?php
     $gridColumn = [
         ['class' => 'yii\grid\SerialColumn'],
         ['attribute' => 'id', 'visible' => false],
@@ -45,7 +48,7 @@ $this->registerJs($search);
                 },
             ],
         ],
-    ]; 
+    ];
     ?>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -76,7 +79,7 @@ $this->registerJs($search);
                 'exportConfig' => [
                     ExportMenu::FORMAT_PDF => false
                 ]
-            ]) ,
+            ]),
         ],
     ]); ?>
 

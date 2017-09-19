@@ -1,0 +1,915 @@
+/*
+ * Copyright (c) 2017.
+ * this file created in printing-office project
+ * framework: Yii2
+ * license: GPL V3 2017 - 2025
+ * Author:amintado@gmail.com
+ * Company:shahrmap.ir
+ * Official GitHub Page: https://github.com/amintado/printing-office
+ * All rights reserved.
+ */
+
+/* Base */
+/* Mixins */
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after {
+    clear: both;
+}
+/* Color variables */
+/* Text Colors */
+.a-white {
+    color: #ffffff;
+}
+.a-grey {
+    color: #dddddd;
+}
+.a-black {
+    color: #333333;
+}
+.a-red {
+    color: #f75353;
+}
+.a-green {
+    color: #51d466;
+}
+.a-lblue {
+    color: #32c8de;
+}
+.a-blue {
+    color: #609cec;
+}
+.a-orange {
+    color: #f78153;
+}
+.a-yellow {
+    color: #fcd419;
+}
+.a-violet {
+    color: #cb79e6;
+}
+.a-rose {
+    color: #ff61e7;
+}
+.a-brown {
+    color: #d08166;
+}
+/* Background Colors */
+.a-bg-white {
+    background-color: #ffffff;
+}
+.a-bg-grey {
+    background-color: #dddddd;
+}
+.a-bg-black {
+    background-color: #333333;
+}
+.a-bg-red {
+    background-color: #f75353;
+}
+.a-bg-green {
+    background-color: #51d466;
+}
+.a-bg-lblue {
+    background-color: #32c8de;
+}
+.a-bg-blue {
+    background-color: #609cec;
+}
+.a-bg-orange {
+    background-color: #f78153;
+}
+.a-bg-yellow {
+    background-color: #fcd419;
+}
+.a-bg-violet {
+    background-color: #cb79e6;
+}
+.a-bg-rose {
+    background-color: #ff61e7;
+}
+.a-bg-brown {
+    background-color: #d08166;
+}
+/* Gradient backgrounds */
+.a-grad-1 {
+    background: #ea3a04;
+    background: -moz-linear-gradient(top, #ea3a04 0%, #b9bc00 100%);
+    background: -webkit-linear-gradient(top, #ea3a04 0%, #b9bc00 100%);
+    background: linear-gradient(to bottom, #ea3a04 0%, #b9bc00 100%);
+}
+.a-grad-2 {
+    background: #b4e391;
+    background: -moz-linear-gradient(top, #b4e391 0%, #61c419 0%, #94e8b4 100%);
+    background: -webkit-linear-gradient(top, #b4e391 0%, #61c419 0%, #94e8b4 100%);
+    background: linear-gradient(to bottom, #b4e391 0%, #61c419 0%, #94e8b4 100%);
+}
+.a-grad-3 {
+    background: #00967f;
+    background: -moz-linear-gradient(top, #00967f 0%, #a8009d 100%);
+    background: -webkit-linear-gradient(top, #00967f 0%, #a8009d 100%);
+    background: linear-gradient(to bottom, #00967f 0%, #a8009d 100%);
+}
+.a-grad-4 {
+    background: #b4bc1e;
+    background: -moz-linear-gradient(top, #b4bc1e 0%, #d622a0 100%);
+    background: -webkit-linear-gradient(top, #b4bc1e 0%, #d622a0 100%);
+    background: linear-gradient(to bottom, #b4bc1e 0%, #d622a0 100%);
+}
+.a-grad-5 {
+    background: #4815c6;
+    background: -moz-linear-gradient(top, #4815c6 0%, #ff5c5c 100%);
+    background: -webkit-linear-gradient(top, #4815c6 0%, #ff5c5c 100%);
+    background: linear-gradient(to bottom, #4815c6 0%, #ff5c5c 100%);
+}
+.a-grad-6 {
+    background: #25aa87;
+    background: -moz-linear-gradient(top, #25aa87 0%, #ed9017 100%);
+    background: -webkit-linear-gradient(top, #25aa87 0%, #ed9017 100%);
+    background: linear-gradient(to bottom, #25aa87 0%, #ed9017 100%);
+}
+.a-grad-7 {
+    background: #4eaf33;
+    background: -moz-linear-gradient(top, #4eaf33 0%, #e2e276 100%);
+    background: -webkit-linear-gradient(top, #4eaf33 0%, #e2e276 100%);
+    background: linear-gradient(to bottom, #4eaf33 0%, #e2e276 100%);
+}
+.a-grad-8 {
+    background: #5ab721;
+    background: -moz-linear-gradient(top, #5ab721 0%, #ff670f 100%);
+    background: -webkit-linear-gradient(top, #5ab721 0%, #ff670f 100%);
+    background: linear-gradient(to bottom, #5ab721 0%, #ff670f 100%);
+}
+.a-grad-9 {
+    background: #53ba41;
+    background: -moz-linear-gradient(top, #53ba41 0%, #6d88b7 100%);
+    background: -webkit-linear-gradient(top, #53ba41 0%, #6d88b7 100%);
+    background: linear-gradient(to bottom, #53ba41 0%, #6d88b7 100%);
+}
+.a-grad-10 {
+    background: #ed1e36;
+    background: -moz-linear-gradient(top, #ed1e36 0%, #319b55 100%);
+    background: -webkit-linear-gradient(top, #ed1e36 0%, #319b55 100%);
+    background: linear-gradient(to bottom, #ed1e36 0%, #319b55 100%);
+}
+/* Blockquote */
+blockquote {
+    margin: 10px 0px;
+    background: #fff;
+}
+blockquote:before,
+blockquote:after {
+    content: " ";
+    display: table;
+}
+blockquote:after {
+    clear: both;
+}
+blockquote span {
+    float: left;
+    font-family: Georgia, 'Times New Roman', serif;
+    width: 60px;
+    display: inline-block;
+    line-height: 90px;
+    font-size: 95px;
+    text-align: center;
+    color: #333333;
+}
+blockquote p {
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 34px;
+    color: #333333;
+    margin-left: 65px;
+}
+blockquote small {
+    margin-left: 65px;
+    font-size: 14px;
+    line-height: 28px;
+    color: #777;
+    font-style: italic;
+}
+/* Labels */
+.a-label {
+    padding: 3px 7px;
+    border-radius: 3px;
+    margin: 3px 1px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+    /* Icon Label */
+}
+.a-label.a-label-icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    padding: 0px;
+}
+.a-label.a-label-white {
+    background: #ffffff;
+    color: #333333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.075);
+}
+.a-label.a-label-grey {
+    background: #dddddd;
+    color: #333333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.075);
+}
+.a-label.a-label-black {
+    background: #333333;
+    color: #ffffff;
+}
+.a-label.a-label-red {
+    background: #f75353;
+    color: #ffffff;
+}
+.a-label.a-label-green {
+    background: #51d466;
+    color: #ffffff;
+}
+.a-label.a-label-lblue {
+    background: #32c8de;
+    color: #ffffff;
+}
+.a-label.a-label-blue {
+    background: #609cec;
+    color: #ffffff;
+}
+.a-label.a-label-orange {
+    background: #f78153;
+    color: #ffffff;
+}
+.a-label.a-label-yellow {
+    background: #fcd419;
+    color: #ffffff;
+}
+.a-label.a-label-violet {
+    background: #cb79e6;
+    color: #ffffff;
+}
+.a-label.a-label-rose {
+    background: #ff61e7;
+    color: #ffffff;
+}
+.a-label.a-label-brown {
+    background: #d08166;
+    color: #ffffff;
+}
+/* Button Colors */
+.a-btn {
+    display: inline-block;
+    padding: 9px 12px;
+    font-size: 14px;
+    line-height: 14px;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #333333;
+    cursor: pointer;
+    border: 0px;
+    margin: 3px 1px;
+    transition: 0.5s;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.125);
+    /* Button small */
+    /* Button large */
+    /* Icon button */
+}
+.a-btn:hover,
+.a-btn:focus {
+    background: #f2f2f2;
+    color: #333333;
+    text-decoration: none;
+}
+.a-btn.a-btn-sm {
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.a-btn.a-btn-lg {
+    padding: 13px 18px;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 16px;
+}
+.a-btn.a-btn-icon {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 33px;
+    text-align: center;
+    padding: 0px;
+}
+.a-btn.a-btn-white {
+    background: #ffffff;
+    color: #333333;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.075);
+}
+.a-btn.a-btn-white:hover,
+.a-btn.a-btn-white:focus {
+    background: #f2f2f2;
+    color: #333333;
+}
+.a-btn.a-btn-grey {
+    background: #dddddd;
+    color: #333333;
+    border: 1px solid #c4c4c4;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.075);
+}
+.a-btn.a-btn-grey:hover,
+.a-btn.a-btn-grey:focus {
+    background: #c4c4c4;
+    color: #333333;
+}
+.a-btn.a-btn-black {
+    background: #333333;
+    color: #ffffff;
+}
+.a-btn.a-btn-black:hover,
+.a-btn.a-btn-black:focus {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+.a-btn.a-btn-red {
+    background: #f75353;
+    color: #ffffff;
+}
+.a-btn.a-btn-red:hover,
+.a-btn.a-btn-red:focus {
+    background: #f52222;
+    color: #ffffff;
+}
+.a-btn.a-btn-green {
+    background: #51d466;
+    color: #ffffff;
+}
+.a-btn.a-btn-green:hover,
+.a-btn.a-btn-green:focus {
+    background: #30c247;
+    color: #ffffff;
+}
+.a-btn.a-btn-lblue {
+    background: #32c8de;
+    color: #ffffff;
+}
+.a-btn.a-btn-lblue:hover,
+.a-btn.a-btn-lblue:focus {
+    background: #1faabe;
+    color: #ffffff;
+}
+.a-btn.a-btn-blue {
+    background: #609cec;
+    color: #ffffff;
+}
+.a-btn.a-btn-blue:hover,
+.a-btn.a-btn-blue:focus {
+    background: #3280e7;
+    color: #ffffff;
+}
+.a-btn.a-btn-orange {
+    background: #f78153;
+    color: #ffffff;
+}
+.a-btn.a-btn-orange:hover,
+.a-btn.a-btn-orange:focus {
+    background: #f55d22;
+    color: #ffffff;
+}
+.a-btn.a-btn-yellow {
+    background: #fcd419;
+    color: #ffffff;
+}
+.a-btn.a-btn-yellow:hover,
+.a-btn.a-btn-yellow:focus {
+    background: #dfb803;
+    color: #ffffff;
+}
+.a-btn.a-btn-violet {
+    background: #cb79e6;
+    color: #ffffff;
+}
+.a-btn.a-btn-violet:hover,
+.a-btn.a-btn-violet:focus {
+    background: #ba4ede;
+    color: #ffffff;
+}
+.a-btn.a-btn-rose {
+    background: #ff61e7;
+    color: #ffffff;
+}
+.a-btn.a-btn-rose:hover,
+.a-btn.a-btn-rose:focus {
+    background: #ff2edf;
+    color: #ffffff;
+}
+.a-btn.a-btn-brown {
+    background: #d08166;
+    color: #ffffff;
+}
+.a-btn.a-btn-brown:hover,
+.a-btn.a-btn-brown:focus {
+    background: #c4613f;
+    color: #ffffff;
+}
+/* Border */
+.a-br {
+    border-width: 1px;
+    border-style: solid;
+    /* Border color */
+    /* Border size */
+    /* Border style */
+}
+.a-br.a-br-white {
+    border-color: #ffffff;
+}
+.a-br.a-br-grey {
+    border-color: #dddddd;
+}
+.a-br.a-br-black {
+    border-color: #333333;
+}
+.a-br.a-br-red {
+    border-color: #f75353;
+}
+.a-br.a-br-green {
+    border-color: #51d466;
+}
+.a-br.a-br-lblue {
+    border-color: #32c8de;
+}
+.a-br.a-br-blue {
+    border-color: #609cec;
+}
+.a-br.a-br-orange {
+    border-color: #f78153;
+}
+.a-br.a-br-yellow {
+    border-color: #fcd419;
+}
+.a-br.a-br-violet {
+    border-color: #cb79e6;
+}
+.a-br.a-br-rose {
+    border-color: #ff61e7;
+}
+.a-br.a-br-brown {
+    border-color: #d08166;
+}
+.a-br.a-br-2 {
+    border-width: 2px;
+}
+.a-br.a-br-4 {
+    border-width: 4px;
+}
+.a-br.a-br-6 {
+    border-width: 6px;
+}
+.a-br.a-br-10 {
+    border-width: 10px;
+}
+.a-br.a-br-15 {
+    border-width: 15px;
+}
+.a-br.a-br-dotted {
+    border-style: dotted;
+}
+.a-br.a-br-dashed {
+    border-style: dashed;
+}
+.a-br.a-br-double {
+    border-style: double;
+    border-width: 4px !important;
+}
+/* Social Media */
+.a-social {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin: 5px 2px;
+    text-align: center;
+    line-height: 31px;
+    color: #fff;
+    border-radius: 3px;
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.a-social:hover,
+.a-social:focus {
+    color: #fff;
+}
+.a-social.a-social-trans {
+    background: transparent !important;
+    color: #333333;
+}
+.a-social.a-facebook {
+    border: 2px solid #609cec;
+    background: #609cec;
+}
+.a-social.a-facebook:hover,
+.a-social.a-facebook:focus {
+    border: 2px solid #3280e7;
+    background: #3280e7;
+}
+.a-social.a-twitter {
+    border: 2px solid #32c8de;
+    background: #32c8de;
+}
+.a-social.a-twitter:hover,
+.a-social.a-twitter:focus {
+    border: 2px solid #1faabe;
+    background: #1faabe;
+}
+.a-social.a-google-plus {
+    border: 2px solid #f75353;
+    background: #f75353;
+}
+.a-social.a-google-plus:hover,
+.a-social.a-google-plus:focus {
+    border: 2px solid #f52222;
+    background: #f52222;
+}
+.a-social.a-linkedin {
+    border: 2px solid #8eb8f1;
+    background: #8eb8f1;
+}
+.a-social.a-linkedin:hover,
+.a-social.a-linkedin:focus {
+    border: 2px solid #609cec;
+    background: #609cec;
+}
+.a-social.a-pinterest {
+    border: 2px solid #f52222;
+    background: #f52222;
+}
+.a-social.a-pinterest:hover,
+.a-social.a-pinterest:focus {
+    border: 2px solid #da0a0a;
+    background: #da0a0a;
+}
+/* Base */
+a {
+    outline: 0;
+}
+a:hover {
+    outline: 0;
+}
+a:focus {
+    text-decoration: none;
+    outline: 0;
+}
+input::-moz-focus-inner {
+    border: 0;
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus *:focus {
+    outline: none;
+}
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ *
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter a,
+.syntaxhighlighter div,
+.syntaxhighlighter code,
+.syntaxhighlighter table,
+.syntaxhighlighter table td,
+.syntaxhighlighter table tr,
+.syntaxhighlighter table tbody,
+.syntaxhighlighter table thead,
+.syntaxhighlighter table caption,
+.syntaxhighlighter textarea {
+    -moz-border-radius: 0 0 0 0 !important;
+    -webkit-border-radius: 0 0 0 0 !important;
+    background: none !important;
+    border: 0 !important;
+    bottom: auto !important;
+    float: none !important;
+    height: auto !important;
+    left: auto !important;
+    line-height: 1.1em !important;
+    margin: 0 !important;
+    outline: 0 !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    position: static !important;
+    right: auto !important;
+    text-align: left !important;
+    top: auto !important;
+    vertical-align: baseline !important;
+    width: auto !important;
+    box-sizing: content-box !important;
+    font-family: "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    font-weight: normal !important;
+    font-style: normal !important;
+    font-size: 1em !important;
+    min-height: inherit !important;
+    min-height: auto !important;
+}
+
+.syntaxhighlighter {
+    width: 100% !important;
+    margin: 1em 0 1em 0 !important;
+    position: relative !important;
+    overflow: auto !important;
+    font-size: 1em !important;
+}
+.syntaxhighlighter.source {
+    overflow: hidden !important;
+}
+.syntaxhighlighter .bold {
+    font-weight: bold !important;
+}
+.syntaxhighlighter .italic {
+    font-style: italic !important;
+}
+.syntaxhighlighter .line {
+    white-space: pre !important;
+}
+.syntaxhighlighter table {
+    width: 100% !important;
+}
+.syntaxhighlighter table caption {
+    text-align: left !important;
+    padding: .5em 0 0.5em 1em !important;
+}
+.syntaxhighlighter table td.code {
+    width: 100% !important;
+}
+.syntaxhighlighter table td.code .container {
+    position: relative !important;
+}
+.syntaxhighlighter table td.code .container textarea {
+    box-sizing: border-box !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    background: white !important;
+    padding-left: 1em !important;
+    overflow: hidden !important;
+    white-space: pre !important;
+}
+.syntaxhighlighter table td.gutter .line {
+    text-align: right !important;
+    padding: 0 0.5em 0 1em !important;
+}
+.syntaxhighlighter table td.code .line {
+    padding: 0 1em !important;
+}
+.syntaxhighlighter.nogutter td.code .container textarea, .syntaxhighlighter.nogutter td.code .line {
+    padding-left: 0em !important;
+}
+.syntaxhighlighter.show {
+    display: block !important;
+}
+.syntaxhighlighter.collapsed table {
+    display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+    padding: 0.1em 0.8em 0em 0.8em !important;
+    font-size: 1em !important;
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+}
+.syntaxhighlighter.collapsed .toolbar span {
+    display: inline !important;
+    margin-right: 1em !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a {
+    padding: 0 !important;
+    display: none !important;
+}
+.syntaxhighlighter.collapsed .toolbar span a.expandSource {
+    display: inline !important;
+}
+.syntaxhighlighter .toolbar {
+    position: absolute !important;
+    right: 1px !important;
+    top: 1px !important;
+    width: 11px !important;
+    height: 11px !important;
+    font-size: 10px !important;
+    z-index: 10 !important;
+}
+.syntaxhighlighter .toolbar span.title {
+    display: inline !important;
+}
+.syntaxhighlighter .toolbar a {
+    display: block !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    padding-top: 1px !important;
+}
+.syntaxhighlighter .toolbar a.expandSource {
+    display: none !important;
+}
+.syntaxhighlighter.ie {
+    font-size: .9em !important;
+    padding: 1px 0 1px 0 !important;
+}
+.syntaxhighlighter.ie .toolbar {
+    line-height: 8px !important;
+}
+.syntaxhighlighter.ie .toolbar a {
+    padding-top: 0px !important;
+}
+.syntaxhighlighter.printing .line.alt1 .content,
+.syntaxhighlighter.printing .line.alt2 .content,
+.syntaxhighlighter.printing .line.highlighted .number,
+.syntaxhighlighter.printing .line.highlighted.alt1 .content,
+.syntaxhighlighter.printing .line.highlighted.alt2 .content {
+    background: none !important;
+}
+.syntaxhighlighter.printing .line .number {
+    color: #bbbbbb !important;
+}
+.syntaxhighlighter.printing .line .content {
+    color: black !important;
+}
+.syntaxhighlighter.printing .toolbar {
+    display: none !important;
+}
+.syntaxhighlighter.printing a {
+    text-decoration: none !important;
+}
+.syntaxhighlighter.printing .plain, .syntaxhighlighter.printing .plain a {
+    color: black !important;
+}
+.syntaxhighlighter.printing .comments, .syntaxhighlighter.printing .comments a {
+    color: #008200 !important;
+}
+.syntaxhighlighter.printing .string, .syntaxhighlighter.printing .string a {
+    color: blue !important;
+}
+.syntaxhighlighter.printing .keyword {
+    color: #006699 !important;
+    font-weight: bold !important;
+}
+.syntaxhighlighter.printing .preprocessor {
+    color: gray !important;
+}
+.syntaxhighlighter.printing .variable {
+    color: #aa7700 !important;
+}
+.syntaxhighlighter.printing .value {
+    color: #009900 !important;
+}
+.syntaxhighlighter.printing .functions {
+    color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .constants {
+    color: #0066cc !important;
+}
+.syntaxhighlighter.printing .script {
+    font-weight: bold !important;
+}
+.syntaxhighlighter.printing .color1, .syntaxhighlighter.printing .color1 a {
+    color: gray !important;
+}
+.syntaxhighlighter.printing .color2, .syntaxhighlighter.printing .color2 a {
+    color: #ff1493 !important;
+}
+.syntaxhighlighter.printing .color3, .syntaxhighlighter.printing .color3 a {
+    color: red !important;
+}
+.syntaxhighlighter.printing .break, .syntaxhighlighter.printing .break a {
+    color: black !important;
+}
+/**
+ * SyntaxHighlighter
+ * http://alexgorbatchev.com/SyntaxHighlighter
+ *
+ * SyntaxHighlighter is donationware. If you are using it, please donate.
+ * http://alexgorbatchev.com/SyntaxHighlighter/donate.html
+ *
+ * @version
+ * 3.0.83 (July 02 2010)
+ *
+ * @copyright
+ * Copyright (C) 2004-2010 Alex Gorbatchev.
+ *
+ * @license
+ * Dual licensed under the MIT and GPL licenses.
+ */
+.syntaxhighlighter {
+    background-color: white !important;
+}
+.syntaxhighlighter .line.alt1 {
+    background-color: white !important;
+}
+.syntaxhighlighter .line.alt2 {
+    background-color: white !important;
+}
+.syntaxhighlighter .line.highlighted.alt1, .syntaxhighlighter .line.highlighted.alt2 {
+    background-color: #e0e0e0 !important;
+}
+.syntaxhighlighter .line.highlighted.number {
+    color: black !important;
+}
+.syntaxhighlighter table caption {
+    color: black !important;
+}
+.syntaxhighlighter .gutter {
+    color: #afafaf !important;
+}
+.syntaxhighlighter .gutter .line {
+    border-right: 3px solid #6ce26c !important;
+}
+.syntaxhighlighter .gutter .line.highlighted {
+    background-color: #6ce26c !important;
+    color: white !important;
+}
+.syntaxhighlighter.printing .line .content {
+    border: none !important;
+}
+.syntaxhighlighter.collapsed {
+    overflow: visible !important;
+}
+.syntaxhighlighter.collapsed .toolbar {
+    color: blue !important;
+    background: white !important;
+    border: 1px solid #6ce26c !important;
+}
+.syntaxhighlighter.collapsed .toolbar a {
+    color: blue !important;
+}
+.syntaxhighlighter.collapsed .toolbar a:hover {
+    color: red !important;
+}
+.syntaxhighlighter .toolbar {
+    color: white !important;
+    background: #6ce26c !important;
+    border: none !important;
+}
+.syntaxhighlighter .toolbar a {
+    color: white !important;
+}
+.syntaxhighlighter .toolbar a:hover {
+    color: black !important;
+}
+.syntaxhighlighter .plain, .syntaxhighlighter .plain a {
+    color: black !important;
+}
+.syntaxhighlighter .comments, .syntaxhighlighter .comments a {
+    color: #008200 !important;
+}
+.syntaxhighlighter .string, .syntaxhighlighter .string a {
+    color: blue !important;
+}
+.syntaxhighlighter .keyword {
+    color: #006699 !important;
+}
+.syntaxhighlighter .preprocessor {
+    color: gray !important;
+}
+.syntaxhighlighter .variable {
+    color: #aa7700 !important;
+}
+.syntaxhighlighter .value {
+    color: #009900 !important;
+}
+.syntaxhighlighter .functions {
+    color: #ff1493 !important;
+}
+.syntaxhighlighter .constants {
+    color: #0066cc !important;
+}
+.syntaxhighlighter .script {
+    font-weight: bold !important;
+    color: #006699 !important;
+    background-color: none !important;
+}
+.syntaxhighlighter .color1, .syntaxhighlighter .color1 a {
+    color: gray !important;
+}
+.syntaxhighlighter .color2, .syntaxhighlighter .color2 a {
+    color: #ff1493 !important;
+}
+.syntaxhighlighter .color3, .syntaxhighlighter .color3 a {
+    color: red !important;
+}
+
+.syntaxhighlighter .keyword {
+    font-weight: bold !important;
+}
+

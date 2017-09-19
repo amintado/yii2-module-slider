@@ -76,18 +76,24 @@ class PanelController extends Controller
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
-    public function actionCreate()
+    public function actionCreate($mode)
     {
+//        echo '<pre>';
+//        var_dump(Yii::$app->request->post());
+//        die();
         $model = new SlideComposer();
-
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            return $this->render('create',
+                [
+                    'model' => $model,
+                    'mode' => $mode
+                ]
+            );
         }
     }
+
 
     /**
      * Updates an existing SlideComposer model.
@@ -99,7 +105,7 @@ class PanelController extends Controller
     {
         if (Yii::$app->request->post('_asnew') == '1') {
             $model = new SlideComposer();
-        }else{
+        } else {
             $model = $this->findModel($id);
         }
 
@@ -126,20 +132,21 @@ class PanelController extends Controller
     }
 
     /**
-    * Creates a new SlideComposer model by another data,
-    * so user don't need to input all field from scratch.
-    * If creation is successful, the browser will be redirected to the 'view' page.
-    *
-    * @param mixed $id
-    * @return mixed
-    */
-    public function actionSaveAsNew($id) {
+     * Creates a new SlideComposer model by another data,
+     * so user don't need to input all field from scratch.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     *
+     * @param mixed $id
+     * @return mixed
+     */
+    public function actionSaveAsNew($id)
+    {
         $model = new SlideComposer();
 
         if (Yii::$app->request->post('_asnew') != '1') {
             $model = $this->findModel($id);
         }
-    
+
         if ($model->loadAll(Yii::$app->request->post()) && $model->saveAll()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -148,7 +155,7 @@ class PanelController extends Controller
             ]);
         }
     }
-    
+
     /**
      * Finds the SlideComposer model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
@@ -164,20 +171,20 @@ class PanelController extends Controller
             throw new NotFoundHttpException(Yii::t('atslider', 'The requested page does not exist.'));
         }
     }
-    
+
     /**
-    * Action to load a tabular form grid
-    * for SlideComposerSlide
-    * @author Yohanes Candrajaya <moo.tensai@gmail.com>
-    * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
-    *
-    * @return mixed
-    */
+     * Action to load a tabular form grid
+     * for SlideComposerSlide
+     * @author Yohanes Candrajaya <moo.tensai@gmail.com>
+     * @author Jiwantoro Ndaru <jiwanndaru@gmail.com>
+     *
+     * @return mixed
+     */
     public function actionAddSlideComposerSlide()
     {
         if (Yii::$app->request->isAjax) {
             $row = Yii::$app->request->post('SlideComposerSlide');
-            if((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
+            if ((Yii::$app->request->post('isNewRecord') && Yii::$app->request->post('_action') == 'load' && empty($row)) || Yii::$app->request->post('_action') == 'add')
                 $row[] = [];
             return $this->renderAjax('_formSlideComposerSlide', ['row' => $row]);
         } else {

@@ -13,11 +13,19 @@
         }
     ],
     "require": {
-        "php": ">=5.6.0"
+        "php": ">=5.6.0",
+        "mootensai/yii2-relation-trait": "*",
+        "kartik-v/bootstrap-fileinput": "@dev"
     },
     "autoload": {
         "psr-4": {
             "amintado\\slider\\": ""
+        },
+        "scripts": {
+            "post-update-cmd": [
+                "bower install vis",
+                "bower install bootstrap-toggle"
+                ]
         }
     }
 }

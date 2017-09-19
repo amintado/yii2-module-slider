@@ -3,7 +3,6 @@
 namespace amintado\slider\models\base;
 
 use Yii;
-
 /**
  * This is the base model class for table "{{%slide_composer}}".
  *
@@ -18,6 +17,8 @@ use Yii;
 class SlideComposer extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
+    use traits\atSliderTrait;
+    public $images = [];
 
 
     /**
@@ -27,6 +28,7 @@ class SlideComposer extends \yii\db\ActiveRecord
     public function relationNames()
     {
         return [
+//            'slides',
             'slideComposerSlides'
         ];
     }
@@ -65,14 +67,16 @@ class SlideComposer extends \yii\db\ActiveRecord
         ];
     }
     
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getSlides()
-    {
-        return $this->hasMany(\amintado\slider\models\SlideComposerSlide::className(), ['composerID' => 'id']);
-    }
+//    /**
+//     * @return \yii\db\ActiveQuery
+//     */
+//    public function getSlides()
+//    {
+//        return $this->hasMany(\amintado\slider\models\base\SlideComposerSlide::className(), ['composerID' => 'id']);
+//    }
     
-
+    public function getSlideComposerSlides(){
+        return $this->hasMany(\amintado\slider\models\base\SlideComposerSlide::className(), ['composerID' => 'id']);
+    }
    
 }

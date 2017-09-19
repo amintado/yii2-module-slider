@@ -22,7 +22,7 @@ use Yii;
 class SlideComposerSlide extends \yii\db\ActiveRecord
 {
     use \mootensai\relation\RelationTrait;
-
+    use traits\atSliderTrait;
 
     /**
     * This function helps \mootensai\relation\RelationTrait runs faster

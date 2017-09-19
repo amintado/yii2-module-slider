@@ -3,14 +3,14 @@
  * @var $this View
  */
 
-use amintado\slider\Assets\AmintadoLayerSliderAssets;
+use amintado\slider\Assets\AmintadoLayerSliderAsset;
 use amintado\slider\models\base\SlideComposer;
 use amintado\slider\models\base\SlideComposerSlide;
 use amintado\slider\models\base\SlideComposerSlideLayer;
 use yii\web\BadRequestHttpException;
 use yii\web\View;
 
-AmintadoLayerSliderAssets::register($this);
+AmintadoLayerSliderAsset::register($this);
 $this->registerJs("
 $(document).ready(function(){
  
