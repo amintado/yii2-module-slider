@@ -1,15 +1,14 @@
-##this module is under develope
-
+## this module is under develope
 
 an layer slider for Yii2 that is using codecanyon layer slider [http://kreaturamedia.com/layerslider-responsive-jquery-slider-plugin/]
-##install
 
+## install
 
 ````
 $ composer require amintado/yii2-module-slider "@dev"
 ````
-##TODO
 
+## TODO
 
 - [X] Create admin panel view
 - [X] Create timelines
