@@ -2,6 +2,7 @@
 
 use amintado\slider\assets\AmintadoLayerSliderAsset;
 use amintado\slider\assets\BootstrapToggleAsset;
+use amintado\slider\assets\ColorPickerAsset;
 use kartik\widgets\FileInput;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
@@ -20,6 +21,7 @@ use yii\widgets\ActiveForm;
 ]);
 $asset=AmintadoLayerSliderAsset::register($this);
 BootstrapToggleAsset::register($this);
+ColorPickerAsset::register($this);
 ?>
 
 <div class="slide-composer-form">

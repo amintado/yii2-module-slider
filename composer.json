@@ -24,7 +24,8 @@
         "scripts": {
             "post-update-cmd": [
                 "bower install vis",
-                "bower install bootstrap-toggle"
+                "bower install bootstrap-toggle",
+                "bower install bootstrap-colorpicker"
                 ]
         }
     }

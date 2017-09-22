@@ -14,7 +14,7 @@
  * Created by PhpStorm.
  * User: amin__000
  * Date: 9/19/2017
- * Time: 3:41 AM
+ * Time: 5:06 PM
  */
 
 namespace amintado\slider\assets;
@@ -22,15 +22,17 @@ namespace amintado\slider\assets;
 
 use yii\web\AssetBundle;
 
-class BootstrapToggleAsset extends AssetBundle
+class ColorPickerAsset extends AssetBundle
 {
-    public $sourcePath = '@bower/bootstrap-toggle';
-    public $js = [
-        'js/bootstrap-toggle.min.js'
-    ];
-    public $css = [
-        'css/bootstrap-toggle.min.css'
-    ];
+    public $sourcePath='@bower/bootstrap-colorpicker';
+    public $js=
+        [
+          'dist/js/bootstrap-colorpicker.min.js'
+        ];
+    public $css=
+        [
+          'dist/css/bootstrap-colorpicker.css'
+        ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',

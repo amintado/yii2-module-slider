@@ -27,4 +27,8 @@ class VisTimelineAsset extends AssetBundle
         'vis-timeline-graph2d.min.css',
         'vis-graph3d.min.css'
     ];
+    public $depends = [
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapAsset',
+    ];
 }
